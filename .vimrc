@@ -3,49 +3,6 @@ set nocompatible
 " 一旦ファイルタイプ関連を無効化する
 filetype off
 
-""""""""""""""""""""""""""""""
-" プラグインのセットアップ
-""""""""""""""""""""""""""""""
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
-" ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-" Gitを便利に使う
-NeoBundle 'tpope/vim-fugitive'
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-" コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
-" シングルクオートとダブルクオートの入れ替え等
-NeoBundle 'tpope/vim-surround'
-" インデントに色を付けて見やすくする
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-" 行末の半角スペースを可視化(うまく動かない？)
-NeoBundle 'bronson/vim-trailing-whitespace'
-" less用のsyntaxハイライト
-NeoBundle 'KohPoll/vim-less'
-
-call neobundle#end()
-" Required:
-filetype plugin indent on
-" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-" 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
-NeoBundleCheck
-"""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
@@ -62,8 +19,6 @@ set cmdheight=2
 set laststatus=2
 " ステータス行に表示させる情報の指定(どこからかコピペしたので細かい意味はわかっていない)
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-" ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
 set title
 " コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
